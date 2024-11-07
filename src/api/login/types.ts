@@ -10,6 +10,7 @@ export type UserLoginVO = {
 export type TokenType = {
   id: number // 编号
   accessToken: string // 访问令牌
+  jwtToken: string // Jwt令牌
   refreshToken: string // 刷新令牌
   userId: number // 用户编号
   userType: number //用户类型

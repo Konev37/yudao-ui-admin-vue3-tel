@@ -5,6 +5,7 @@ import { decrypt, encrypt } from '@/utils/jsencrypt'
 const { wsCache } = useCache()
 
 const AccessTokenKey = 'ACCESS_TOKEN'
+const JwtTokenKey = 'JWT_TOKEN'
 const RefreshTokenKey = 'REFRESH_TOKEN'
 
 // 获取token
@@ -21,6 +22,7 @@ export const getRefreshToken = () => {
 // 设置token
 export const setToken = (token: TokenType) => {
   wsCache.set(RefreshTokenKey, token.refreshToken)
+  wsCache.set(JwtTokenKey, token.jwtToken)
   wsCache.set(AccessTokenKey, token.accessToken)
 }
 
