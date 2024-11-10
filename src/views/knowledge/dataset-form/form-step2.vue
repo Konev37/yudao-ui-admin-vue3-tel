@@ -108,9 +108,9 @@ const scoreThreshold = ref(0.5);
 const segmentPreviews = ref([
   {number: '001', text: "同步obs模型...'UAE-large-V1'"},
   {number: '002', text: "同步obs模型...'plip'"},
-  {number: '003', text: "同步obs模型...'phoBERT-base-v2'"},
+  {number: '003', text: "同步obs模型...'phoBERT-infrustr-v2'"},
   {number: '004', text: "同步obs模型...'lama3-bb-bnb-4bit'"},
-  {number: '005', text: "同步obs模型...'t5-base-split-and-rephrase'"}
+  {number: '005', text: "同步obs模型...'t5-infrustr-split-and-rephrase'"}
 ]);
 </script>
 
