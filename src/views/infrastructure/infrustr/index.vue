@@ -118,7 +118,7 @@
           type="primary"
           plain
           @click="openForm('create')"
-          v-hasPermi="['infrastructure:infrastructure:create']"
+          v-hasPermi="['base:infrastructure:create']"
         >
           <Icon icon="ep:plus" class="mr-5px" /> 新增
         </el-button>
@@ -127,7 +127,7 @@
           plain
           @click="handleExport"
           :loading="exportLoading"
-          v-hasPermi="['infrastructure:infrastructure:export']"
+          v-hasPermi="['base:infrastructure:export']"
         >
           <Icon icon="ep:download" class="mr-5px" /> 导出
         </el-button>
@@ -161,7 +161,7 @@
             link
             type="primary"
             @click="openForm('update', scope.row.id)"
-            v-hasPermi="['infrastructure:infrastructure:update']"
+            v-hasPermi="['base:infrastructure:update']"
           >
             编辑
           </el-button>
@@ -169,7 +169,7 @@
             link
             type="danger"
             @click="handleDelete(scope.row.id)"
-            v-hasPermi="['infrastructure:infrastructure:delete']"
+            v-hasPermi="['base:infrastructure:delete']"
           >
             删除
           </el-button>
