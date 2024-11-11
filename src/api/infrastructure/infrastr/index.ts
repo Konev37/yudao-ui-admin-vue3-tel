@@ -19,31 +19,31 @@ export interface InfrastructureVO {
 export const InfrastructureApi = {
   // 查询基础设施分页
   getInfrastructurePage: async (params: any) => {
-    return await request.get({ url: `/infrastr/page`, params })
+    return await request.get({ url: `/infrastructure/infrastr/page`, params })
   },
 
   // 查询基础设施详情
   getInfrastructure: async (id: number) => {
-    return await request.get({ url: `/infrastr/get?id=` + id })
+    return await request.get({ url: `/infrastructure/infrastr/get?id=` + id })
   },
 
   // 新增基础设施
   createInfrastructure: async (data: InfrastructureVO) => {
-    return await request.post({ url: `/infrastr/create`, data })
+    return await request.post({ url: `/infrastructure/infrastr/create`, data })
   },
 
   // 修改基础设施
   updateInfrastructure: async (data: InfrastructureVO) => {
-    return await request.put({ url: `/infrastr/update`, data })
+    return await request.put({ url: `/infrastructure/infrastr/update`, data })
   },
 
   // 删除基础设施
   deleteInfrastructure: async (id: number) => {
-    return await request.delete({ url: `/infrastr/delete?id=` + id })
+    return await request.delete({ url: `/infrastructure/infrastr/delete?id=` + id })
   },
 
   // 导出基础设施 Excel
   exportInfrastructure: async (params) => {
-    return await request.download({ url: `/infrastr/export-excel`, params })
+    return await request.download({ url: `/infrastructure/infrastr/export-excel`, params })
   }
 }

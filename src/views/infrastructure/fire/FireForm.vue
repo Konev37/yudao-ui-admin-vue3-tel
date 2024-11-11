@@ -42,7 +42,7 @@
   </Dialog>
 </template>
 <script setup lang="ts">
-import { FireApi, FireVO } from '@/api/fire'
+import { FireApi, FireVO } from '@/api/infrastructure/fire'
 
 /** 消防栓 表单 */
 defineOptions({ name: 'FireForm' })

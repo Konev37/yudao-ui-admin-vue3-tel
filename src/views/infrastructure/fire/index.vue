@@ -145,7 +145,7 @@
 
 <script setup lang="ts">
 import download from '@/utils/download'
-import { FireApi, FireVO } from '@/api/fire'
+import { FireApi, FireVO } from '@/api/infrastructure/fire'
 import FireForm from './FireForm.vue'
 
 /** 消防栓 列表 */
