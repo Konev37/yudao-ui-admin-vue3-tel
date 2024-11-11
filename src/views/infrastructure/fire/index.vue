@@ -17,7 +17,7 @@
           class="!w-240px"
         />
       </el-form-item>
-      <el-form-item label="基础设施id" prop="infrastructureId">
+      <el-form-item label="设施id" prop="infrastructureId">
         <el-input
           v-model="queryParams.infrastructureId"
           placeholder="请输入基础设施id"
