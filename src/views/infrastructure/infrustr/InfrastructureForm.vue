@@ -9,7 +9,9 @@
     >
       <el-form-item label="设施类型" prop="type">
         <el-select v-model="formData.type" placeholder="请选择设施类型">
-          <el-option label="请选择字典生成" value="" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+          <el-option label="消防栓" value="消防栓" />
+          <el-option label="垃圾桶" value="垃圾桶" />
         </el-select>
       </el-form-item>
       <el-form-item label="设施容量" prop="capacity">

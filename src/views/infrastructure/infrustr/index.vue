@@ -24,7 +24,15 @@
           clearable
           class="!w-240px"
         >
-          <el-option label="请选择字典生成" value="" />
+          <el-option label="消防栓" value="消防栓" />
+          <el-option label="垃圾桶" value="垃圾桶" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+<!--          <el-option-->
+<!--            v-for="dict in getIntDictOptions(DICT_TYPE.INFRASTRUCTURE_TYPE)"-->
+<!--            :key="dict.value"-->
+<!--            :label="dict.label"-->
+<!--            :value="dict.value"-->
+<!--          />-->
         </el-select>
       </el-form-item>
       <el-form-item label="设施容量" prop="capacity">
@@ -210,6 +218,7 @@ import {dateFormatter, dateFormatter2} from '@/utils/formatTime'
 import download from '@/utils/download'
 import { InfrastructureApi, InfrastructureVO } from '@/api/infrastructure/infrastr'
 import InfrastructureForm from './InfrastructureForm.vue'
+import {DICT_TYPE, getIntDictOptions} from "@/utils/dict";
 
 /** 基础设施 列表 */
 defineOptions({ name: 'Infrastructure' })
