@@ -1,6 +1,6 @@
 <template>
   <div class="head-container">
-    <el-input v-model="deptName" class="mb-20px" clearable placeholder="请输入部门名称">
+    <el-input v-model="deptName" class="mb-20px" clearable placeholder="请输入区域名称">
       <template #prefix>
         <Icon icon="ep:search" />
       </template>
@@ -32,7 +32,7 @@ const deptName = ref('')
 const deptList = ref<Tree[]>([]) // 树形结构
 const treeRef = ref<InstanceType<typeof ElTree>>()
 
-/** 获得部门树 */
+/** 获得区域树 */
 const getTree = async () => {
   const res = await DeptApi.getSimpleDeptList()
   deptList.value = []
@@ -45,7 +45,7 @@ const filterNode = (name: string, data: Tree) => {
   return data.name.includes(name)
 }
 
-/** 处理部门被点击 */
+/** 处理区域被点击 */
 const handleNodeClick = async (row: { [key: string]: any }) => {
   emits('node-click', row)
 }

@@ -1,10 +1,10 @@
 <template>
-  <doc-alert title="用户体系" url="https://doc.iocoder.cn/user-center/" />
-  <doc-alert title="三方登陆" url="https://doc.iocoder.cn/social-user/" />
-  <doc-alert title="Excel 导入导出" url="https://doc.iocoder.cn/excel-import-and-export/" />
+<!--  <doc-alert title="用户体系" url="https://doc.iocoder.cn/user-center/" />-->
+<!--  <doc-alert title="三方登陆" url="https://doc.iocoder.cn/social-user/" />-->
+<!--  <doc-alert title="Excel 导入导出" url="https://doc.iocoder.cn/excel-import-and-export/" />-->
 
   <el-row :gutter="20">
-    <!-- 左侧部门树 -->
+    <!-- 左侧区域树 -->
     <el-col :span="4" :xs="24">
       <ContentWrap class="h-1/1">
         <DeptTree @node-click="handleDeptNodeClick" />
@@ -20,6 +20,15 @@
           :inline="true"
           label-width="68px"
         >
+          <el-form-item label="用户id" prop="username">
+            <el-input
+              v-model="queryParams.id"
+              placeholder="请输入用户id"
+              clearable
+              @keyup.enter="handleQuery"
+              class="!w-240px"
+            />
+          </el-form-item>
           <el-form-item label="用户名称" prop="username">
             <el-input
               v-model="queryParams.username"
@@ -29,15 +38,15 @@
               class="!w-240px"
             />
           </el-form-item>
-          <el-form-item label="手机号码" prop="mobile">
-            <el-input
-              v-model="queryParams.mobile"
-              placeholder="请输入手机号码"
-              clearable
-              @keyup.enter="handleQuery"
-              class="!w-240px"
-            />
-          </el-form-item>
+<!--          <el-form-item label="手机号码" prop="mobile">-->
+<!--            <el-input-->
+<!--              v-model="queryParams.mobile"-->
+<!--              placeholder="请输入手机号码"-->
+<!--              clearable-->
+<!--              @keyup.enter="handleQuery"-->
+<!--              class="!w-240px"-->
+<!--            />-->
+<!--          </el-form-item>-->
           <el-form-item label="状态" prop="status">
             <el-select
               v-model="queryParams.status"
@@ -96,7 +105,7 @@
       </ContentWrap>
       <ContentWrap>
         <el-table v-loading="loading" :data="list">
-          <el-table-column label="用户编号" align="center" key="id" prop="id" />
+          <el-table-column label="用户id" align="center" key="id" prop="id" />
           <el-table-column
             label="用户名称"
             align="center"
@@ -110,13 +119,13 @@
             :show-overflow-tooltip="true"
           />
           <el-table-column
-            label="部门"
+            label="区域"
             align="center"
             key="deptName"
             prop="deptName"
             :show-overflow-tooltip="true"
           />
-          <el-table-column label="手机号码" align="center" prop="mobile" width="120" />
+<!--          <el-table-column label="手机号码" align="center" prop="mobile" width="120" />-->
           <el-table-column label="状态" key="status">
             <template #default="scope">
               <el-switch
@@ -221,6 +230,7 @@ const list = ref([]) // 列表的数
 const queryParams = reactive({
   pageNo: 1,
   pageSize: 10,
+  id: undefined,
   username: undefined,
   mobile: undefined,
   status: undefined,
@@ -253,7 +263,7 @@ const resetQuery = () => {
   handleQuery()
 }
 
-/** 处理部门被点击 */
+/** 处理区域被点击 */
 const handleDeptNodeClick = async (row) => {
   queryParams.deptId = row.id
   await getList()

@@ -75,14 +75,24 @@
       <el-form-item label="建设时间" prop="constructionDate">
         <el-date-picker
           v-model="queryParams.constructionDate"
-          value-format="YYYY-MM-DD HH:mm:ss"
-          type="daterange"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
-          :default-time="[new Date('1 00:00:00'), new Date('1 23:59:59')]"
-          class="!w-220px"
+          value-format="YYYY-MM-DD"
+          type="date"
+          placeholder="选择建设时间"
+          clearable
+          class="!w-240px"
         />
       </el-form-item>
+<!--      <el-form-item label="建设时间" prop="constructionDate">-->
+<!--        <el-date-picker-->
+<!--          v-model="queryParams.constructionDate"-->
+<!--          value-format="YYYY-MM-DD HH:mm:ss"-->
+<!--          type="daterange"-->
+<!--          start-placeholder="开始日期"-->
+<!--          end-placeholder="结束日期"-->
+<!--          :default-time="[new Date('1 00:00:00'), new Date('1 23:59:59')]"-->
+<!--          class="!w-220px"-->
+<!--        />-->
+<!--      </el-form-item>-->
       <el-form-item label="区域id" prop="areaId">
         <el-input
           v-model="queryParams.areaId"
@@ -145,7 +155,13 @@
       <el-table-column label="地址" align="center" prop="address" />
       <el-table-column label="经度" align="center" prop="longitude" />
       <el-table-column label="纬度" align="center" prop="latitude" />
-      <el-table-column label="建设时间" align="center" prop="constructionDate" />
+<!--      <el-table-column label="建设时间" align="center" prop="constructionDate" />-->
+      <el-table-column
+        label="建设时间"
+        align="center"
+        prop="constructionDate"
+        :formatter="dateFormatter2"
+        width="180px"/>
       <el-table-column label="区域id" align="center" prop="areaId" />
       <el-table-column label="创建人id" align="center" prop="creatorId" />
       <el-table-column
@@ -190,7 +206,7 @@
 </template>
 
 <script setup lang="ts">
-import { dateFormatter } from '@/utils/formatTime'
+import {dateFormatter, dateFormatter2} from '@/utils/formatTime'
 import download from '@/utils/download'
 import { InfrastructureApi, InfrastructureVO } from '@/api/infrastructure/infrastr'
 import InfrastructureForm from './InfrastructureForm.vue'
