@@ -26,12 +26,18 @@
       </el-form-item>
       <el-form-item label="类型" prop="type">
         <el-select v-model="formData.type" placeholder="请选择类型">
-          <el-option label="请选择字典生成" value="" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+          <el-option label="手动泵" value="手动泵" />
+          <el-option label="自动泵" value="自动泵" />
         </el-select>
       </el-form-item>
       <el-form-item label="状态" prop="status">
         <el-radio-group v-model="formData.status">
-          <el-radio value="1">请选择字典生成</el-radio>
+<!--          <el-radio value="1">请选择字典生成</el-radio>-->
+          <el-radio value="使用中">使用中</el-radio>
+          <el-radio value="空闲">空闲</el-radio>
+          <el-radio value="损坏">损坏</el-radio>
+          <el-radio value="维修中">维修中</el-radio>
         </el-radio-group>
       </el-form-item>
     </el-form>

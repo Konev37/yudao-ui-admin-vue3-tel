@@ -72,7 +72,9 @@
           clearable
           class="!w-240px"
         >
-          <el-option label="请选择字典生成" value="" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+          <el-option label="手动泵" value="手动泵" />
+          <el-option label="自动泵" value="自动泵" />
         </el-select>
       </el-form-item>
       <el-form-item label="状态" prop="status">
@@ -82,7 +84,11 @@
           clearable
           class="!w-240px"
         >
-          <el-option label="请选择字典生成" value="" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+          <el-option label="使用中" value="使用中" />
+          <el-option label="空闲" value="空闲" />
+          <el-option label="损坏" value="损坏" />
+          <el-option label="维修中" value="维修中" />
         </el-select>
       </el-form-item>
       <el-form-item>

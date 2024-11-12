@@ -10,9 +10,11 @@
       <el-form-item label="基础设施id" prop="infrastructureId">
         <el-input v-model="formData.infrastructureId" placeholder="请输入基础设施id" />
       </el-form-item>
-      <el-form-item label="是否有分类功能" prop="hasClassification">
+      <el-form-item label="是否能分类" prop="hasClassification">
         <el-radio-group v-model="formData.hasClassification">
-          <el-radio value="1">请选择字典生成</el-radio>
+<!--          <el-radio value="1">请选择字典生成</el-radio>-->
+          <el-radio value="true">是</el-radio>
+          <el-radio value="false">否</el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item label="产品型号" prop="productModel">
@@ -20,7 +22,11 @@
       </el-form-item>
       <el-form-item label="状态" prop="status">
         <el-radio-group v-model="formData.status">
-          <el-radio value="1">请选择字典生成</el-radio>
+<!--          <el-radio value="1">请选择字典生成</el-radio>-->
+          <el-radio value="空闲">空闲</el-radio>
+          <el-radio value="满载">满载</el-radio>
+          <el-radio value="损坏">损坏</el-radio>
+          <el-radio value="维修中">维修中</el-radio>
         </el-radio-group>
       </el-form-item>
     </el-form>

@@ -33,7 +33,9 @@
           clearable
           class="!w-240px"
         >
-          <el-option label="请选择字典生成" value="" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+          <el-option label="是" value="true" />
+          <el-option label="否" value="false" />
         </el-select>
       </el-form-item>
       <el-form-item label="产品型号" prop="productModel">
@@ -52,7 +54,11 @@
           clearable
           class="!w-240px"
         >
-          <el-option label="请选择字典生成" value="" />
+<!--          <el-option label="请选择字典生成" value="" />-->
+          <el-option label="空闲" value="空闲" />
+          <el-option label="满载" value="满载" />
+          <el-option label="损坏" value="损坏" />
+          <el-option label="维修中" value="维修中" />
         </el-select>
       </el-form-item>
       <el-form-item>
