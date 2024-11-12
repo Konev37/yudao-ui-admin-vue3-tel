@@ -16,16 +16,16 @@
         </el-form-item>
       </el-col>
       <el-col :span="24" style="padding-right: 10px; padding-left: 10px">
-        <el-form-item v-if="registerData.tenantEnable === 'true'" prop="tenantName">
-          <el-input
-            v-model="registerData.registerForm.tenantName"
-            :placeholder="t('login.tenantname')"
-            :prefix-icon="iconHouse"
-            link
-            type="primary"
-            size="large"
-          />
-        </el-form-item>
+<!--        <el-form-item v-if="registerData.tenantEnable === 'true'" prop="tenantName">-->
+<!--          <el-input-->
+<!--            v-model="registerData.registerForm.tenantName"-->
+<!--            :placeholder="t('login.tenantname')"-->
+<!--            :prefix-icon="iconHouse"-->
+<!--            link-->
+<!--            type="primary"-->
+<!--            size="large"-->
+<!--          />-->
+<!--        </el-form-item>-->
       </el-col>
       <el-col :span="24" style="padding-right: 10px; padding-left: 10px">
         <el-form-item prop="username">
