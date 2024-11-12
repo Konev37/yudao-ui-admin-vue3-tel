@@ -26,15 +26,25 @@
           class="!w-240px"
         />
       </el-form-item>
+<!--      <el-form-item label="维护日期" prop="maintenanceDate">-->
+<!--        <el-date-picker-->
+<!--          v-model="queryParams.maintenanceDate"-->
+<!--          value-format="YYYY-MM-DD HH:mm:ss"-->
+<!--          type="daterange"-->
+<!--          start-placeholder="开始日期"-->
+<!--          end-placeholder="结束日期"-->
+<!--          :default-time="[new Date('1 00:00:00'), new Date('1 23:59:59')]"-->
+<!--          class="!w-220px"-->
+<!--        />-->
+<!--      </el-form-item>-->
       <el-form-item label="维护日期" prop="maintenanceDate">
         <el-date-picker
           v-model="queryParams.maintenanceDate"
-          value-format="YYYY-MM-DD HH:mm:ss"
-          type="daterange"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
-          :default-time="[new Date('1 00:00:00'), new Date('1 23:59:59')]"
-          class="!w-220px"
+          value-format="YYYY-MM-DD"
+          type="date"
+          placeholder="选择维护日期"
+          clearable
+          class="!w-240px"
         />
       </el-form-item>
       <el-form-item label="维护人" prop="maintainer">
@@ -104,7 +114,13 @@
     <el-table v-loading="loading" :data="list" :stripe="true" :show-overflow-tooltip="true">
       <el-table-column label="消防栓id" align="center" prop="id" />
       <el-table-column label="基础设施id" align="center" prop="infrastructureId" />
-      <el-table-column label="维护日期" align="center" prop="maintenanceDate" />
+<!--      <el-table-column label="维护日期" align="center" prop="maintenanceDate" />-->
+      <el-table-column
+        label="维护日期"
+        align="center"
+        prop="maintenanceDate"
+        :formatter="dateFormatter2"
+        width="180px"/>
       <el-table-column label="维护人" align="center" prop="maintainer" />
       <el-table-column label="产品型号" align="center" prop="productModel" />
       <el-table-column label="类型" align="center" prop="type" />
@@ -147,6 +163,7 @@
 import download from '@/utils/download'
 import { FireApi, FireVO } from '@/api/infrastructure/fire'
 import FireForm from './FireForm.vue'
+import {dateFormatter2} from "@/utils/formatTime";
 
 /** 消防栓 列表 */
 defineOptions({ name: 'Fire' })
@@ -162,7 +179,7 @@ const queryParams = reactive({
   pageSize: 10,
   id: undefined,
   infrastructureId: undefined,
-  maintenanceDate: [],
+  maintenanceDate: undefined,
   maintainer: undefined,
   productModel: undefined,
   type: undefined,
