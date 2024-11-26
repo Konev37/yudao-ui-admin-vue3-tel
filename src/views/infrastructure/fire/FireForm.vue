@@ -7,9 +7,9 @@
       label-width="100px"
       v-loading="formLoading"
     >
-      <el-form-item label="基础设施id" prop="infrastructureId">
-        <el-input v-model="formData.infrastructureId" placeholder="请输入基础设施id" />
-      </el-form-item>
+<!--      <el-form-item label="基础设施id" prop="infrastructureId">-->
+<!--        <el-input v-model="formData.infrastructureId" placeholder="请输入基础设施id" />-->
+<!--      </el-form-item>-->
       <el-form-item label="维护日期" prop="maintenanceDate">
         <el-date-picker
           v-model="formData.maintenanceDate"
