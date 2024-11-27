@@ -155,6 +155,8 @@ import { usePermissionStore } from '@/store/modules/permission'
 import * as LoginApi from '@/api/login'
 import { LoginStateEnum, useFormValid, useLoginState } from './useLogin'
 
+import { encrypt } from '@/utils/jsencrypt'
+
 defineOptions({ name: 'LoginForm' })
 
 const { t } = useI18n()
@@ -251,6 +253,7 @@ const handleLogin = async (params) => {
     }
     const loginDataLoginForm = { ...loginData.loginForm }
     loginDataLoginForm.captchaVerification = params.captchaVerification
+    loginDataLoginForm.password = encrypt(loginDataLoginForm.password) as string
     const res = await LoginApi.login(loginDataLoginForm)
     if (!res) {
       return
