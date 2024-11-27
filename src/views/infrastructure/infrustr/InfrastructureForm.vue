@@ -37,11 +37,11 @@
           placeholder="选择建设时间"
         />
       </el-form-item>
-      <el-form-item label="区域id" prop="areaId">
-        <el-input v-model="formData.areaId" placeholder="请输入区域id" />
+      <el-form-item label="区域名称" prop="areaName">
+        <el-input v-model="formData.areaName" placeholder="请输入区域名称" />
       </el-form-item>
-      <el-form-item label="创建人id" prop="creatorId">
-        <el-input v-model="formData.creatorId" placeholder="请输入创建人id" />
+      <el-form-item label="创建人名称" prop="creatorName">
+        <el-input v-model="formData.creatorName" placeholder="请输入创建人名称" />
       </el-form-item>
       <el-form-item label="创建时间" prop="createdAt">
         <el-date-picker
@@ -80,8 +80,8 @@ const formData = ref({
   longitude: undefined,
   latitude: undefined,
   constructionDate: undefined,
-  areaId: undefined,
-  creatorId: undefined,
+  areaName: undefined,
+  creatorName: undefined,
   createdAt: undefined
 })
 const formRules = reactive({
@@ -142,8 +142,8 @@ const resetForm = () => {
     longitude: undefined,
     latitude: undefined,
     constructionDate: undefined,
-    areaId: undefined,
-    creatorId: undefined,
+    areaName: undefined,
+    creatorName: undefined,
     createdAt: undefined
   }
   formRef.value?.resetFields()

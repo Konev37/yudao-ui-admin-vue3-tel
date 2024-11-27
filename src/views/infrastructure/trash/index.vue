@@ -6,7 +6,7 @@
       :model="queryParams"
       ref="queryFormRef"
       :inline="true"
-      label-width="68px"
+      label-width="100px"
     >
       <el-form-item label="id" prop="id">
         <el-input
@@ -17,7 +17,7 @@
           class="!w-240px"
         />
       </el-form-item>
-      <el-form-item label="设施id" prop="infrastructureId">
+      <el-form-item label="基础设施id" prop="infrastructureId">
         <el-input
           v-model="queryParams.infrastructureId"
           placeholder="请输入基础设施id"

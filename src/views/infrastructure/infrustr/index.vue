@@ -6,9 +6,9 @@
       :model="queryParams"
       ref="queryFormRef"
       :inline="true"
-      label-width="68px"
+      label-width="100px"
     >
-      <el-form-item label="设施id" prop="id">
+      <el-form-item label="基础设施id" prop="id">
         <el-input
           v-model="queryParams.id"
           placeholder="请输入基础设施id"
@@ -101,19 +101,19 @@
 <!--          class="!w-220px"-->
 <!--        />-->
 <!--      </el-form-item>-->
-      <el-form-item label="区域id" prop="areaId">
+      <el-form-item label="区域名称" prop="areaName">
         <el-input
-          v-model="queryParams.areaId"
-          placeholder="请输入区域id"
+          v-model="queryParams.areaName"
+          placeholder="请输入区域名称"
           clearable
           @keyup.enter="handleQuery"
           class="!w-240px"
         />
       </el-form-item>
-      <el-form-item label="创建人id" prop="creatorId">
+      <el-form-item label="创建人名称" prop="creatorName">
         <el-input
-          v-model="queryParams.creatorId"
-          placeholder="请输入创建人id"
+          v-model="queryParams.creatorName"
+          placeholder="请输入创建人名称"
           clearable
           @keyup.enter="handleQuery"
           class="!w-240px"
@@ -170,8 +170,8 @@
         prop="constructionDate"
         :formatter="dateFormatter2"
         width="180px"/>
-      <el-table-column label="区域id" align="center" prop="areaId" />
-      <el-table-column label="创建人id" align="center" prop="creatorId" />
+      <el-table-column label="区域名称" align="center" prop="areaName" />
+      <el-table-column label="创建人名称" align="center" prop="creatorName" />
       <el-table-column
         label="创建时间"
         align="center"
@@ -240,8 +240,8 @@ const queryParams = reactive({
   longitude: undefined,
   latitude: undefined,
   constructionDate: [],
-  areaId: undefined,
-  creatorId: undefined,
+  areaName: undefined,
+  creatorName: undefined,
   createdAt: undefined
 })
 const queryFormRef = ref() // 搜索的表单
